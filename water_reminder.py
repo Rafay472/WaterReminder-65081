@@ -20,3 +20,28 @@ def water_temp_suggestion(user_age):
         return "Room temperature"
     else:
         return "Lukewarm"
+
+def run_app():
+    try:
+        kg = float(input("Please enter your weight (kg): "))
+        user_age = int(input("Please enter your age: "))
+
+        if kg <= 0 or user_age <= 0:
+            raise ValueError("Both weight and age must be greater than zero.")
+
+        required_liters = daily_water_amount(kg, user_age)
+        reminder_gap = interval_based_on_age(user_age)
+        suggested_temp = water_temp_suggestion(user_age)
+
+        print("\n--- Hydration Plan ---")
+        print(f"Water Intake: {required_liters} liters/day")
+        print(f"Reminder: {reminder_gap}")
+        print(f"Ideal Temperature: {suggested_temp}")
+
+    except ValueError as ve:
+        print(f"Input issue: {ve}")
+    except Exception as error:
+        print(f"Something went wrong: {error}")
+
+if __name__ == "__main__":
+    run_app()
