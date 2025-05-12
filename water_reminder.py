@@ -12,11 +12,3 @@ def interval_based_on_age(user_age):
     else:
         return "Every 1.5 hours"
 
-def water_temp_suggestion(user_age):
-    """Recommend water temperature based on age bracket."""
-    if user_age < 18:
-        return "Cool"
-    elif user_age <= 50:
-        return "Room temperature"
-    else:
-        return "Lukewarm"
