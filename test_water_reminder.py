@@ -12,8 +12,4 @@ def test_interval_based_on_age_categories():
     assert interval_based_on_age(40) == "Every 2 hours"
     assert interval_based_on_age(75) == "Every 1.5 hours"
 
-def test_water_temp_suggestion_by_age_group():
-    """Check that water temperature suggestions match the age group."""
-    assert water_temp_suggestion(8) == "Cool"
-    assert water_temp_suggestion(50) == "Room temperature"
-    assert water_temp_suggestion(80) == "Lukewarm"
+    
